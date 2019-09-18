@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<TitledPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <content>
+      <VBox>
+         <children>
+            <HBox alignment="center">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="203.0" text="Customers" />
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Add New Customer">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Add Customer Services" toggleGroup="$customer" />
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Customer Payments" toggleGroup="$customer" />
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Customer Invoices" toggleGroup="$customer" />
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" text="Update Customer Record" toggleGroup="$customer" />
+                              <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Delete Customer" toggleGroup="$customer" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="206.0" text="Employees" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Add New Employee">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer1" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="Update Employee" toggleGroup="$customer1" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="128.0" text="Employee Payments" toggleGroup="$customer1" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Employee Schedule" toggleGroup="$customer1" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Delete Employee" toggleGroup="$customer1" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="202.0" text="Utilities and Vendors" />
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="105.0" text="Add New Utility">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer2" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="113.0" text="Add New Vendor" toggleGroup="$customer2" />
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="107.0" text="Utility Payments" toggleGroup="$customer2" />
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="115.0" text="Vendor Payments" toggleGroup="$customer2" />
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="93.0" text="Utility History" toggleGroup="$customer2" />
+                              <RadioButton mnemonicParsing="false" prefHeight="22.0" prefWidth="101.0" text="Vendor History" toggleGroup="$customer2" />
+                              <RadioButton layoutX="10.0" layoutY="139.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="90.0" text="Delete Utility">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer21" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="10.0" layoutY="156.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="98.0" text="Delete Vendor">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer211" />
+                                 </toggleGroup>
+                              </RadioButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="207.0" text="Maintenance" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="104.0" text="Add Equipment">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer3" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="157.0" text="Update Equipment Status" toggleGroup="$customer3" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="151.0" text="Equipment Maintenance" toggleGroup="$customer3" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="List Upcoming Maintenance" toggleGroup="$customer3" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="116.0" text="Delete Equipment" toggleGroup="$customer3" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="218.0" text="Expense Report" />
+                              <RadioButton mnemonicParsing="false" prefHeight="36.0" prefWidth="155.0" text="Generate Expense Report">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="customer4" />
+                                 </toggleGroup>
+                              </RadioButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Pane prefHeight="71.0" prefWidth="1000.0">
+               <children>
+                  <Button layoutX="474.0" layoutY="45.0" mnemonicParsing="false" text="Let's Go!" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </content>
+   <graphic>
+      <MenuBar prefHeight="25.0" prefWidth="163.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </graphic>
+</TitledPane>
