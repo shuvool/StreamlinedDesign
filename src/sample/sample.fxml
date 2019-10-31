@@ -1,103 +1,112 @@
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-
-
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Tab?>
-<TitledPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <VBox>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 
-       <TabPane>
-           <Tab fx:id="tabCustomers" text="Customers" closable="false">
-               <VBox prefHeight="250">
-                   <Button fx:id="customerAdd" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Add New Customer"/>
-                   <Button fx:id="customerServices" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Add Customer Services"/>
-                   <Button fx:id="customerPayments" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Customer Payments"/>
-                   <Button fx:id="customerInvoices" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Customer Invoices"/>
-                   <Button fx:id="customerUpdate" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Update Customer Record"/>
-                   <Button fx:id="customerDelete" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0"
-                           text="Delete Customer"/>
-               </VBox>
-           </Tab>
-           <Tab fx:id="tabEmployees" text="Employees" closable="false">
-               <VBox prefHeight="250">
-                   <Button fx:id="employeeAdd" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Add New Employee"/>
-                   <Button fx:id="employeeUpdate" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Update Employee"/>
-                   <Button fx:id="employeePayments" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Employee Payments"/>
-                   <Button fx:id="employeeSchedule" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Employee Schedule"/>
-                   <Button fx:id="employeeDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Delete Employee"/>
-               </VBox>
-           </Tab>
-           <Tab fx:id="tabVendorsUtilities" text="Vendors and Utilities" closable="false">
-               <VBox>
-                   <Button fx:id="utilityAdd" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Add New Utility"/>
-                   <Button fx:id="vendorAdd" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Add New Vendor"/>
-                   <Button fx:id="utilityPayments" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Utility Payments"/>
-                   <Button fx:id="vendorPayments" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Vendor Payments"/>
-                   <Button fx:id="utilityHistory" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Utility History"/>
-                   <Button fx:id="vendorHistory" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Vendor History"/>
-                   <Button fx:id="utilityDelete" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Delete Utility"/>
-                   <Button fx:id="vendorDelete" mnemonicParsing="false" prefHeight="22.0" prefWidth="200.0"
-                           text="Delete Vendor"/>
-               </VBox>
-           </Tab>
-           <Tab fx:id="tabMaintenance" text="Maintenance" closable="false">
-               <VBox>
-                   <Button fx:id="equipmentAdd" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Add Equipment"/>
-                   <Button fx:id="equipmentStatus" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Update Equipment Status"/>
-                   <Button fx:id="equipmentMaintenance" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Equipment Maintenance"/>
-                   <Button fx:id="equipmentUpcoming" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="List Upcoming Maintenance"/>
-                   <Button fx:id="equipmentDelete" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0"
-                           text="Delete Equipment"/>
-               </VBox>
-           </Tab>
-           <Tab fx:id="tabExpenseReport" text="Expense Report">
-               <Button fx:id="expenseReport" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0"
-                       text="Generate Expense Report"/>
-           </Tab>
-       </TabPane>
-   </VBox>
-   <graphic>
-      <MenuBar prefHeight="25.0" prefWidth="163.0">
-       <Menu mnemonicParsing="false" text="File">
-        <MenuItem mnemonicParsing="false" text="Close" />
-       </Menu>
-       <Menu mnemonicParsing="false" text="Edit">
-        <MenuItem mnemonicParsing="false" text="Delete" />
-       </Menu>
-       <Menu mnemonicParsing="false" text="Help">
-        <MenuItem mnemonicParsing="false" text="About" />
-       </Menu>
-      </MenuBar>
-   </graphic>
+<TitledPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <VBox>
+
+        <TabPane>
+            <Tab fx:id="tabCustomers" closable="false" text="Customers">
+                <VBox alignment="CENTER_LEFT" prefHeight="250">
+                    <HBox alignment="CENTER">
+                        <VBox alignment="CENTER_LEFT" spacing="15.0">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                            <Button fx:id="customerAdd" prefHeight="25.0" prefWidth="200.0"
+                                    text="Add New Customer"/>
+                            <Button fx:id="customerServices" prefHeight="25.0" prefWidth="200.0"
+                                    text="Add Customer Services"/>
+                            <Button fx:id="customerPayments" prefHeight="25.0" prefWidth="200.0"
+                                    text="Customer Payments"/>
+                            <Button fx:id="customerInvoices" prefHeight="25.0" prefWidth="200.0"
+                                    text="Customer Invoices"/>
+                            <Button fx:id="customerUpdate" prefHeight="25.0" prefWidth="200.0"
+                                    text="Update Customer Record"/>
+                            <Button fx:id="customerDelete" prefHeight="25.0" prefWidth="200.0"
+                                    text="Delete Customer"/>
+                        </VBox>
+                        <TableView>
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="C1"/>
+                                <TableColumn prefWidth="75.0" text="C2"/>
+                            </columns>
+                        </TableView>
+                    </HBox>
+                </VBox>
+            </Tab>
+            <Tab fx:id="tabEmployees" closable="false" text="Employees">
+                <VBox alignment="CENTER_LEFT" prefHeight="250" spacing="15.0">
+                    <HBox alignment="CENTER">
+                        <VBox alignment="CENTER_LEFT" spacing="15.0">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                            <Button fx:id="employeeAdd" prefHeight="30.0" prefWidth="200.0"
+                                    text="Add New Employee"/>
+                            <Button fx:id="employeeUpdate" prefHeight="30.0" prefWidth="200.0"
+                                    text="Update Employee"/>
+                            <Button fx:id="employeePayments" prefHeight="30.0" prefWidth="200.0"
+                                    text="Employee Payments"/>
+                            <Button fx:id="employeeSchedule" prefHeight="30.0" prefWidth="200.0"
+                                    text="Employee Schedule"/>
+                            <Button fx:id="employeeDelete" prefHeight="30.0" prefWidth="200.0"
+                                    text="Delete Employee"/>
+                        </VBox>
+                        <TableView>
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="C1"/>
+                                <TableColumn prefWidth="75.0" text="C2"/>
+                            </columns>
+                        </TableView>
+                    </HBox>
+                </VBox>
+            </Tab>
+            <Tab fx:id="tabVendorsUtilities" closable="false" text="Vendors and Utilities">
+                <VBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Button fx:id="utilityAdd" prefHeight="22.0" prefWidth="200.0" text="Add New Utility" />
+                    <Button fx:id="vendorAdd" prefHeight="22.0" prefWidth="200.0" text="Add New Vendor" />
+                    <Button fx:id="utilityPayments" prefHeight="22.0" prefWidth="200.0" text="Utility Payments" />
+                    <Button fx:id="vendorPayments" prefHeight="22.0" prefWidth="200.0" text="Vendor Payments" />
+                    <Button fx:id="utilityHistory" prefHeight="22.0" prefWidth="200.0" text="Utility History" />
+                    <Button fx:id="vendorHistory" prefHeight="22.0" prefWidth="200.0" text="Vendor History" />
+                    <Button fx:id="utilityDelete" prefHeight="22.0" prefWidth="200.0" text="Delete Utility" />
+                    <Button fx:id="vendorDelete" prefHeight="22.0" prefWidth="200.0" text="Delete Vendor" />
+                </VBox>
+            </Tab>
+            <Tab fx:id="tabMaintenance" closable="false" text="Maintenance">
+                <VBox alignment="CENTER_LEFT" spacing="15.0">
+                    <Button fx:id="equipmentAdd" prefHeight="30.0" prefWidth="200.0" text="Add Equipment" />
+                    <Button fx:id="equipmentStatus" prefHeight="30.0" prefWidth="200.0" text="Update Equipment Status" />
+                    <Button fx:id="equipmentMaintenance" prefHeight="30.0" prefWidth="200.0" text="Equipment Maintenance" />
+                    <Button fx:id="equipmentUpcoming" prefHeight="30.0" prefWidth="200.0" text="List Upcoming Maintenance" />
+                    <Button fx:id="equipmentDelete" prefHeight="30.0" prefWidth="200.0" text="Delete Equipment" />
+                </VBox>
+            </Tab>
+        </TabPane>
+    </VBox>
+    <graphic>
+        <MenuBar prefHeight="25.0" prefWidth="163.0">
+            <Menu text="File">
+                <MenuItem text="Close" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Delete" />
+            </Menu>
+            <Menu text="Help">
+                <MenuItem text="About" />
+            </Menu>
+        </MenuBar>
+    </graphic>
 </TitledPane>

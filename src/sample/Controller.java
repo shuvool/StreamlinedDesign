@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,10 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -109,7 +109,19 @@ public class Controller implements Initializable
     Button equipmentDelete = new Button();
 
     @FXML
-    Button expenseReport = new Button();
+    ListView employeeListView = new ListView();
+
+    private Scene customerFormScene;
+
+    public void setCustomerFormScene(Scene scene)
+    {
+        customerFormScene = scene;
+    }
+
+    public void openCustomerFormScene(ActionEvent actionEvent) {
+        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        primaryStage.setScene(customerFormScene);
+    }
 
 
     @Override
@@ -123,7 +135,7 @@ public class Controller implements Initializable
                 Parent root;
                 try
                 {
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("customerAdd.fxml")), resourceBundle);
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("customerFormController.fxml")), resourceBundle);
                     Stage customerAddStage = new Stage();
                     customerAddStage.setTitle("Add Customer");
                     customerAddStage.setScene(new Scene(root, 450, 450));
@@ -133,6 +145,11 @@ public class Controller implements Initializable
                 {
                     e.printStackTrace();
                 }
+
+
+
+
+
             }
         });
 
@@ -619,25 +636,6 @@ public class Controller implements Initializable
             }
         });
 
-        expenseReport.setOnAction(new EventHandler<>()
-        {
-            @Override
-            public void handle(ActionEvent actionEvent)
-            {
-                Parent root;
-                try
-                {
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("expenseReport.fxml")), resourceBundle);
-                    Stage expenseReportStage = new Stage();
-                    expenseReportStage.setTitle("Add Customer");
-                    expenseReportStage.setScene(new Scene(root, 450, 450));
-                    expenseReportStage.show();
-                    ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-        });
+
     }
 }
