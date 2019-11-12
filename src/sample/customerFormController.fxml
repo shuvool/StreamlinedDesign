@@ -9,56 +9,53 @@
 <?import javafx.geometry.Insets?>
 
 
-        <?xml version="1.0" encoding="UTF-8"?>
-
-        <?import javafx.geometry.Insets?>
-        <?import javafx.scene.control.ListView?>
-        <?import javafx.scene.control.TextField?>
-        <?import javafx.scene.layout.Pane?>
-
-
-        <?import javafx.scene.layout.HBox?>
-
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.CustomerFormController">
     <ListView layoutX="142.0" layoutY="100.0" prefHeight="200.0" prefWidth="316.0"/>
     <VBox>
         <HBox prefHeight="400">
+            <Label fx:id="fNameLabel" text="First Name" layoutX="200" layoutY="100" />
             <TextField fx:id="firstName" layoutX="226.0" layoutY="100.0" promptText="First Name">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="lNameLabel" text="Last Name" layoutX="200" layoutY="125" />
             <TextField fx:id="lastName" layoutX="226.0" layoutY="125.0" promptText="Last Name">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="sNumberLabel" text="Street Number" layoutX="200" layoutY="150" />
             <TextField fx:id="streetNumber" layoutX="226.0" layoutY="150.0" promptText="Street Number">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="sNameLabel" text="Street Name" layoutX="200" layoutY="175" />
             <TextField fx:id="streetName" layoutX="226.0" layoutY="175.0" promptText="Street Name">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="cityLabel" text="City" layoutX="200" layoutY="200" />
             <TextField fx:id="city" layoutX="226.0" layoutY="200.0" promptText="City">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="stateLabel" text="State" layoutX="200" layoutY="225" />
             <TextField fx:id="state" layoutX="226.0" layoutY="225.0" promptText="State">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>
                 </padding>
             </TextField>
 
+            <Label fx:id="zipCodeLabel" text="Zip Code" layoutX="200" layoutY="250" />
             <TextField fx:id="zipCode" layoutX="226.0" layoutY="250.0" promptText="Zip Code">
                 <padding>
                     <Insets bottom="5.0" top="5.0"/>

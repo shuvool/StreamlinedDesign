@@ -20,6 +20,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -41,16 +44,31 @@ public class CustomerFormController implements Initializable{
     TextField firstName = new TextField();
 
     @FXML
+    Label fNameLabel = new Label();
+
+    @FXML
     TextField lastName = new TextField();
+
+    @FXML
+    Label lNameLabel = new Label();
 
     @FXML
     TextField streetNumber = new TextField();
 
     @FXML
+    Label sNumberLabel = new Label();
+
+    @FXML
     TextField streetName = new TextField();
 
     @FXML
+    Label sNameLabel = new Label();
+
+    @FXML
     TextField city = new TextField();
+
+    @FXML
+    Label cityLabel = new Label();
 
     @FXML
     TextField state = new TextField();
@@ -59,42 +77,21 @@ public class CustomerFormController implements Initializable{
     TextField zipCode = new TextField();
 
     @FXML
+    Label zipCodeLabel = new Label();
+
+    @FXML
     Button submit = new Button();
+
+    public Connection conn = null;
+    public PreparedStatement statement = null;
+
+
+    //public void clickAddCustomer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        TableColumn<CustomerFormController, TextField> firstName = new TableColumn<>("First Name");
-        firstName.setMinWidth(200);
-        firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
 
-        TableColumn<CustomerFormController, TextField> lastName = new TableColumn<>("Last Name");
-        lastName.setMinWidth(200);
-        lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-
-        TableColumn<CustomerFormController, TextField> streetNumber = new TableColumn<>("Street Number");
-        streetNumber.setMinWidth(200);
-        streetNumber.setCellValueFactory(new PropertyValueFactory<>("streetNumber"));
-
-        TableColumn<CustomerFormController, TextField> streetName = new TableColumn<>("Street Name");
-        streetName.setMinWidth(200);
-        streetName.setCellValueFactory(new PropertyValueFactory<>("streetName"));
-
-        TableColumn<CustomerFormController, TextField> city = new TableColumn<>("City");
-        city.setMinWidth(200);
-        city.setCellValueFactory(new PropertyValueFactory<>("city"));
-
-        TableColumn<CustomerFormController, TextField> state = new TableColumn<>("State");
-        state.setMinWidth(200);
-        state.setCellValueFactory(new PropertyValueFactory<>("state"));
-
-        TableColumn<CustomerFormController, TextField> zipCode = new TableColumn<>("Zip Code");
-        zipCode.setMinWidth(200);
-        zipCode.setCellValueFactory(new PropertyValueFactory<>("city"));
-
-        /*TableView<CustomerFormController> newCustomerTable;
-        newCustomerTable = new TableView<>();
-        newCustomerTable.setItems(getCustomerFormController);*/
 
         ArrayList<String> newCustomerInfo = new ArrayList<>();
 
@@ -109,15 +106,29 @@ public class CustomerFormController implements Initializable{
             newCustomerInfo.add(state.toString());
             newCustomerInfo.add(zipCode.toString());
 
-            new
+            String sql  = "Insert into Customer(firstName, lastName, streetName, streetNumber, city, state, zipCode) Values(?,?,?,?,?,?,?)";
+            try
+            {
+                statement = conn.prepareStatement(sql);
+                statement.setString(1, firstName.toString());
+                statement.setString(2, lastName.toString());
+                statement.setString(3, streetName.toString());
+                statement.setString(4, streetNumber.toString());
+                statement.setString(5, city.toString());
+                statement.setString(6, state.toString());
+                statement.setString(7, zipCode.toString());
+            }
+
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+
+
         });
 
     }
 
-    /*public ObservableList<CustomerFormController> getCustomerFormController()
-    {
-        ObservableList<CustomerFormController> customerInfo = FXCollections.observableArrayList();
-        customerInfo.add(new CustomerFormController(firstName))
-    }*/
+
 
 }
