@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.RadioButton?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CustomerDisplayController">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Customers">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Show Customers" />
+                                <MenuItem mnemonicParsing="false" text="Add Customer" />
+                                <MenuItem mnemonicParsing="false" text="Update" />
+                                <MenuItem mnemonicParsing="false" text="View Payments" />
+                                <CheckMenuItem mnemonicParsing="false" text="View Balances" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Employees">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Show Employees" />
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Products">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Unspecified Menu">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox spacing="5.0">
+                    <children>
+                        <TextField fx:id="custIdFilter" prefHeight="27.0" prefWidth="50.0" promptText="ID#" />
+                        <TextField fx:id="lNameFilter" prefWidth="170.0" promptText="Last Name" />
+                        <TextField fx:id="fNameFilter" prefWidth="170.0" promptText="First Name" />
+                        <TextField fx:id="streetFilter" promptText="Address" />
+                        <TextField fx:id="cityFilter" promptText="City" />
+                        <TextField fx:id="stateFilter" prefWidth="45.0" promptText="State" />
+                        <TextField fx:id="zipCodeFilter" prefWidth="82.0" promptText="Postal Code" />
+                        <TextField fx:id="phoneFilter" promptText="Phone" />
+                        <Button fx:id="filter" mnemonicParsing="false" text="Filter" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox spacing="5.0">
+                    <children>
+                        <CheckBox fx:id="addressCheckBox" mnemonicParsing="false" text="Address">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="phoneCheckBox" mnemonicParsing="false" text="Phone">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </CheckBox>
+                        <RadioButton fx:id="activeButton" toggleGroup="activeFilter" mnemonicParsing="false" text="Active">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="inactiveButton" toggleGroup="activeFilter" mnemonicParsing="false" text="Inactive">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="allButton" toggleGroup="activeFilter" mnemonicParsing="false" text="All">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </RadioButton>
+                        <CheckBox fx:id="notesCheckBox" mnemonicParsing="false" text="Notes">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </CheckBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <bottom>
+        <Label text="Customer" BorderPane.alignment="CENTER" />
+    </bottom>
+    <center>
+        <TableView fx:id="customerTableView" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn prefWidth="50.0" text="ID#" />
+                <TableColumn prefWidth="170.0" text="Last Name" />
+                <TableColumn minWidth="0.0" prefWidth="170.0" text="First Name" />
+                <TableColumn prefWidth="300.0" text="Address" />
+                <TableColumn prefWidth="100.0" text="City" />
+                <TableColumn prefWidth="40.0" text="State" />
+                <TableColumn prefWidth="78.0" text="Postal Code" />
+                <TableColumn prefWidth="120.0" text="Phone" />
+                <TableColumn prefWidth="79.0" text="Status" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

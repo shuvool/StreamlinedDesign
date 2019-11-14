@@ -1,14 +1,17 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CustomerDisplay implements Initializable
+public class CustomerDisplayController implements Initializable
 {
     @FXML
     Button filter = new Button();
@@ -36,6 +39,58 @@ public class CustomerDisplay implements Initializable
 
     @FXML
     TextField phoneFilter = new TextField();
+
+    @FXML
+    CheckBox addressCheckBox = new CheckBox();
+
+    @FXML
+    CheckBox phoneCheckBox = new CheckBox();
+
+    @FXML
+    CheckBox notesCheckBox = new CheckBox();
+
+    @FXML
+    RadioButton activeButton = new RadioButton();
+
+    @FXML
+    RadioButton inactiveButton = new RadioButton();
+
+    @FXML
+    RadioButton allButton = new RadioButton();
+
+    @FXML
+    TableView customerTableView = new TableView();
+
+    Connection conn = null;
+    PreparedStatement stm = null;
+
+    ArrayList<String> results = new ArrayList<>();
+
+    public ObservableList<CustomerTableView> populateTableView(Connection con) throws SQLException
+    {
+        ObservableList<CustomerTableView> customerDisplayList = FXCollections.observableArrayList();
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("SELECT " +
+                "CUST_ID as ID, " +
+                "CUST_FNAME as FirstName, " +
+                "CUST_LNAME as LastName, " +
+                "CUST_STNUM + \" \" + CUST_STNAME as Address, " +
+                "CUST_CITY as City, " +
+                "CUST_STATE as State, " +
+                "CUST_ZIP as PostalCode," +
+                "CUST_PHONE as Phone" +
+                "FROM CUST_TABLE" );
+
+        while(rs.next())
+        {
+            customerDisplayList.add(new CustomerTableView(rs.getInt("ID"), rs.getString("FirstName"),
+                    rs.getString("LastName"), rs.getString("Address"), rs.getString("City"),
+                    rs.getString("State"), rs.getInt("PostalCode"), rs.getString("Phone")));
+        }
+
+        return customerDisplayList;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
