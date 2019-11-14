@@ -22,11 +22,18 @@ public class Main extends Application {
         Parent customerFormPane = customerFormControllerLoader.load();
         Scene customerFormScene = new Scene(customerFormPane, 450, 450);
 
+        FXMLLoader serviceTypeStatusControllerLoader = new FXMLLoader(getClass().getResource("serviceTypeStatusController.fxml"));
+        Parent serviceTypeStatusPane = serviceTypeStatusControllerLoader.load();
+        Scene serviceTypeStatusScene = new Scene(serviceTypeStatusPane, 450, 450);
+
         Controller homePaneController = (Controller) controllerLoader.getController();
         homePaneController.setCustomerFormScene(customerFormScene);
 
         CustomerFormController customerFormController = (CustomerFormController) customerFormControllerLoader.getController();
         customerFormController.setControllerScene(controllerScene);
+
+        ServiceTypeStatusController serviceTypeStatusController = (ServiceTypeStatusController) serviceTypeStatusControllerLoader.getController();
+        serviceTypeStatusController.setServiceTypeStatusControllerScene(serviceTypeStatusScene);
 
         primaryStage.setTitle("Home Screen");
         primaryStage.setScene(controllerScene);

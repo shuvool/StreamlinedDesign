@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39db8ee3-cdc1-4880-a23d-6a6bf0c6140c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/NewCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ServiceStatusTableView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ServiceTypeStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ServiceTypeStatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/serviceTypeStatusController.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlinedDesign.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlinedDesign.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CustomerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/customerFormController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/customerFormController.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -46,7 +42,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,8 +108,17 @@
       <workItem from="1572295177746" duration="3373000" />
       <workItem from="1572723434913" duration="259000" />
       <workItem from="1573078449068" duration="5622000" />
-      <workItem from="1573595124719" duration="6236000" />
+      <workItem from="1573595124719" duration="20648000" />
+      <workItem from="1573695400475" duration="601000" />
     </task>
+    <task id="LOCAL-00001" summary="DB Connection class created, Customer Form Controller updated. Placeholder database, table, attribute names used">
+      <created>1573602779802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573602779802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,5 +136,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DB Connection class created, Customer Form Controller updated. Placeholder database, table, attribute names used" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB Connection class created, Customer Form Controller updated. Placeholder database, table, attribute names used" />
   </component>
 </project>
